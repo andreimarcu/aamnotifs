@@ -10,4 +10,4 @@ n = notifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
 # it can be "mail", "chat", etc.
 # This will make it easy to choose which channels your clients
 # will receive
-n.send("test_channel", "Title here", "Content here")
+n.send("example_channel", "Notification title here", "Notification content here")

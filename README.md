@@ -20,12 +20,17 @@ n = notifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
 
 Send a message:
 ```python
-n.send("test_channel", "Notification title", "Notification content")
+n.send("test_channel_one", "Notification title", "Notification content")
+n.send("test_channel_two", "Notification title", "Notification content")
 ```
 
 Listen for messages:
 ```python
-n.receive("test_channel", callback_function)
+n.receive("test_channel_one", callback_function)
+
+# OR n.receive(["test_channel_one", "test_channel_two"], callback_function)
+# or even n.receive(["#"], callback_function)  # wildcard matches all channels
+
 ```
 
 Author
