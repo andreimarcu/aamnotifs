@@ -26,7 +26,7 @@ class Notifs(object):
             self.channel.exchange_declare(exchange=self.exchange, type='topic')
         except:
             time.sleep(2)
-            self.connect()
+            self.connect(url)
 
     def receive(self, routings, callback):
         if type(routings) == str:
