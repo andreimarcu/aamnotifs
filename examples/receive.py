@@ -1,7 +1,7 @@
 ################################################################################
 # Simple(st) example for receiving notifications.
 ################################################################################
-import notifs
+import aamnotifs
 
 
 def print_all_notifications(title, message):
@@ -12,7 +12,7 @@ def print_mail_and_irc_notifications(title, message):
     print "Mail and IRC notifications received: {0}: {1}".format(title, message)
 
 try:
-    n = notifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
+    n = aamnotifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
 
     # The routing_name is the name of the "channel" you want to use
     # it can be "mail", "chat", etc.

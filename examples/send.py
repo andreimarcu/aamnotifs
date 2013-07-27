@@ -1,10 +1,10 @@
 ################################################################################
 # Simple(st) example for sending a notification.
 ################################################################################
-import notifs
+import aamnotifs
 
 
-n = notifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
+n = aamnotifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
 
 # The routing_name is the name of the "channel" you want to use
 # it can be "mail", "chat", etc.
