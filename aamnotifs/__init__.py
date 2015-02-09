@@ -17,6 +17,7 @@ class Notifs(object):
 
     def __init__(self, url, exchange="notifs"):
         self.exchange = exchange
+        self.url = url
         self.connect(url)
 
     def connect(self, url):
@@ -26,7 +27,7 @@ class Notifs(object):
             self.channel.exchange_declare(exchange=self.exchange, type='topic')
         except:
             time.sleep(2)
-            self.connect(url)
+            self.connect(self.url)
 
     def receive(self, routings, callback):
         if type(routings) == str:
@@ -50,7 +51,7 @@ class Notifs(object):
 
         except:
             time.sleep(2)
-            self.connect()
+            self.connect(self.url)
             self.receive(routings, callback)
 
     def send(self, routing, title, message):
@@ -61,6 +62,6 @@ class Notifs(object):
                                        routing_key=routing, body=body)
         except:
             time.sleep(2)
-            self.connect()
+            self.connect(self.url)
             self.channel.basic_publish(exchange=self.exchange,
                                        routing_key=routing, body=body)
