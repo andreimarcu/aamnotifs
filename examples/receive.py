@@ -23,4 +23,4 @@ try:
     # OR n.receive(["mail", "irc"], print_mail_and_irc_notifications)
 
 except KeyboardInterrupt:
-    break
+    exit(1)
