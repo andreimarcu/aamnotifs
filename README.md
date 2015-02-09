@@ -15,7 +15,7 @@ Best illustrated in the provided examples but this is the basic idea:
 
 Connect to the RabbitMQ server:
 ```python
-n = notifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
+n = aamnotifs.Notifs("amqps://user:password@domain.tld:5673/%2F")
 ```
 
 Send a message:
