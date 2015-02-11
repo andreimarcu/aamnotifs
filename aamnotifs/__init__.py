@@ -11,7 +11,7 @@
 import pika
 import time
 import json
-
+from pika.exceptions import ProbableAccessDeniedError
 
 class Notifs(object):
 
@@ -25,6 +25,8 @@ class Notifs(object):
             self.connection = pika.BlockingConnection(pika.URLParameters(url))
             self.channel = self.connection.channel()
             self.channel.exchange_declare(exchange=self.exchange, type='topic')
+        except ProbableAccessDeniedError:
+            print "Error: credentials specified are invalid."
         except:
             time.sleep(2)
             self.connect(self.url)
